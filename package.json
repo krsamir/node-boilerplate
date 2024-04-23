@@ -1,0 +1,45 @@
+{
+  "name": "erp-microservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "utilities",
+    "database"
+  ],
+  "scripts": {
+    "start": "yarn workspace server start",
+    "dev": "nodemon server/index.js",
+    "prepare": "husky",
+    "lint": "eslint ./",
+    "conf": "eslint --config ./.eslintrc.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krsamir/erp-microservice.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mysql"
+  ],
+  "author": "samir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krsamir/erp-microservice/issues"
+  },
+  "homepage": "https://github.com/krsamir/erp-microservice#readme",
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.js": "eslint ./"
+  }
+}
